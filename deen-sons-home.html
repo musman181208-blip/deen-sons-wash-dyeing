@@ -1,0 +1,838 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DEEN & SONS WASH DYEING | Textile Washing & Dyeing</title>
+  <meta name="description"
+        content="DEEN & SONS WASH DYEING - Professional textile washing, dyeing and finishing services.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7f8;
+      color: #17202a;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 25, 35, 0.96);
+      padding: 15px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 15px rgba(0,0,0,.2);
+    }
+
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #19c37d;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #19c37d;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 7% 70px;
+      background:
+        linear-gradient(rgba(4,20,28,.78), rgba(4,20,28,.82)),
+        radial-gradient(circle at center, #246b59, #07151c);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #19c37d;
+      border-radius: 30px;
+      color: #19c37d;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #19c37d;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 700px;
+      color: #d9e3e7;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: #19c37d;
+      color: #06130f;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #29e694;
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #07151c;
+    }
+
+    /* GENERAL */
+    section {
+      padding: 85px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #65727a;
+    }
+
+    /* ABOUT */
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: #eef8f4;
+      border-left: 5px solid #19c37d;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .about-box h3 {
+      margin-bottom: 15px;
+      font-size: 25px;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .service {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.07);
+      transition: .3s;
+      border-top: 4px solid #19c37d;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+    }
+
+    .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+      font-size: 23px;
+    }
+
+    .service p {
+      color: #65727a;
+    }
+
+    /* PROCESS */
+    .process {
+      background: #081820;
+      color: white;
+    }
+
+    .process .section-title p {
+      color: #b8c7cc;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      padding: 25px;
+      text-align: center;
+      border: 1px solid #28434d;
+      border-radius: 12px;
+    }
+
+    .number {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: #19c37d;
+      color: #06130f;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    /* WHY US */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .why {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    }
+
+    .why strong {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info {
+      background: #081820;
+      color: white;
+      padding: 35px;
+      border-radius: 15px;
+    }
+
+    .contact-info h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      margin: 18px 0;
+    }
+
+    .contact-item b {
+      color: #19c37d;
+    }
+
+    form {
+      background: #f5f7f8;
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ccd5d9;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    textarea {
+      height: 140px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #19c37d;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #29e694;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #061218;
+      color: #aebdc2;
+      text-align: center;
+      padding: 30px 7%;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 29px;
+      text-decoration: none;
+      z-index: 2000;
+      box-shadow: 0 5px 20px rgba(0,0,0,.3);
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+
+      nav {
+        padding: 14px 5%;
+      }
+
+      nav ul {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav ul {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 160px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 65px 5%;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .services-grid,
+      .why-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">DEEN & <span>SONS</span></div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <div class="badge">TEXTILE WASHING & DYEING</div>
+
+      <h1>
+        DEEN & SONS<br>
+        <span>WASH DYEING</span>
+      </h1>
+
+      <p>
+        Professional textile washing, dyeing and finishing services
+        focused on quality, consistency and customer satisfaction.
+      </p>
+
+      <div class="buttons">
+        <a href="#services" class="btn btn-primary">
+          Explore Services
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+          Contact Us
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="section-title">
+      <h2>About Us</h2>
+      <p>Quality processing for modern textile requirements.</p>
+    </div>
+
+    <div class="about-grid">
+
+      <div>
+        <h2>DEEN & SONS WASH DYEING</h2>
+        <br>
+
+        <p>
+          We provide textile washing, dyeing and finishing services
+          designed to help businesses achieve consistent fabric quality.
+        </p>
+
+        <br>
+
+        <p>
+          Our focus is on careful processing, quality control and
+          reliable service for every order.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Our Mission</h3>
+
+        <p>
+          To provide dependable textile processing services while
+          maintaining quality, consistency and professional customer
+          service.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services">
+
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Professional textile processing solutions.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service">
+        <div class="icon">🧵</div>
+        <h3>Garment Washing</h3>
+        <p>
+          Professional garment washing processes for different
+          textile requirements.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="icon">🎨</div>
+        <h3>Fabric Dyeing</h3>
+        <p>
+          Textile dyeing services focused on consistent colour
+          and quality.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="icon">✨</div>
+        <h3>Finishing</h3>
+        <p>
+          Finishing processes to improve the appearance and
+          overall feel of textile products.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="icon">⚙️</div>
+        <h3>Processing</h3>
+        <p>
+          Carefully managed textile processing according to
+          project requirements.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="icon">🔬</div>
+        <h3>Quality Control</h3>
+        <p>
+          Quality-focused processing to maintain consistency
+          throughout production.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="icon">🚚</div>
+        <h3>Order Support</h3>
+        <p>
+          Professional communication and support throughout
+          the order process.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+
+    <div class="section-title">
+      <h2>Our Process</h2>
+      <p>Simple and professional workflow.</p>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="step">
+        <div class="number">1</div>
+        <h3>Receive</h3>
+        <p>Material and order requirements are received.</p>
+      </div>
+
+      <div class="step">
+        <div class="number">2</div>
+        <h3>Process</h3>
+        <p>Washing and dyeing processes are carried out.</p>
+      </div>
+
+      <div class="step">
+        <div class="number">3</div>
+        <h3>Check</h3>
+        <p>Processed material goes through quality checking.</p>
+      </div>
+
+      <div class="step">
+        <div class="number">4</div>
+        <h3>Deliver</h3>
+        <p>Finished order is prepared for delivery.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY US -->
+  <section>
+
+    <div class="section-title">
+      <h2>Why Choose Us?</h2>
+      <p>Built around quality and reliability.</p>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why">
+        <strong>✓ Quality Focus</strong>
+        <p>
+          Attention to processing quality and consistency.
+        </p>
+      </div>
+
+      <div class="why">
+        <strong>✓ Professional Service</strong>
+        <p>
+          Clear communication and customer-focused service.
+        </p>
+      </div>
+
+      <div class="why">
+        <strong>✓ Reliable Processing</strong>
+        <p>
+          Organized workflow for textile processing requirements.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Get in touch with DEEN & SONS WASH DYEING.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-info">
+
+        <h3>Let's Work Together</h3>
+
+        <div class="contact-item">
+          <b>📞 Phone</b><br>
+          +92 315 2603118
+        </div>
+
+        <div class="contact-item">
+          <b>💬 WhatsApp</b><br>
+          +92 315 2603118
+        </div>
+
+        <div class="contact-item">
+          <b>📧 Email</b><br>
+          info@example.com
+        </div>
+
+        <div class="contact-item">
+          <b>📍 Address</b><br>
+          Your Business Address, Karachi, Pakistan
+        </div>
+
+      </div>
+
+
+      <form onsubmit="sendMessage(event)">
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Your Name"
+          required
+        >
+
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Phone Number"
+          required
+        >
+
+        <input
+          type="text"
+          id="subject"
+          placeholder="Subject"
+          required
+        >
+
+        <textarea
+          id="message"
+          placeholder="Your Message"
+          required
+        ></textarea>
+
+        <button type="submit">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © <span id="year"></span>
+      <strong>DEEN & SONS WASH DYEING</strong>.
+      All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- WHATSAPP BUTTON -->
+  <!-- Replace 923XXXXXXXXX with your WhatsApp number -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/923152603118"
+    target="_blank"
+    title="Chat on WhatsApp">
+    ☎
+  </a>
+
+
+  <script>
+
+    // Current Year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    // Contact Form → WhatsApp
+    function sendMessage(event) {
+
+      event.preventDefault();
+
+      const name =
+        document.getElementById("name").value;
+
+      const phone =
+        document.getElementById("phone").value;
+
+      const subject =
+        document.getElementById("subject").value;
+
+      const message =
+        document.getElementById("message").value;
+
+
+      // IMPORTANT:
+      // Replace this with your real WhatsApp number.
+      const whatsappNumber = "923152603118";
+
+
+      const text =
+        "Hello DEEN & SONS WASH DYEING%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Phone: " + encodeURIComponent(phone) + "%0A" +
+        "Subject: " + encodeURIComponent(subject) + "%0A" +
+        "Message: " + encodeURIComponent(message);
+
+
+      window.open(
+        "https://wa.me/" + whatsappNumber + "?text=" + text,
+        "_blank"
+      );
+    }
+
+  </script>
+
+</body>
+</html>
+```
